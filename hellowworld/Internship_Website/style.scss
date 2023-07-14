@@ -1,0 +1,63 @@
+@mixin flexBox($direction,$justify-content,$align-item,$align-content){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-item;
+    align-content: $align-content;
+}
+
+.circlemap{
+    width: 400px;
+    height: 400px;
+    min-height: 400px;
+    min-width:400px;
+    border-radius: 500%;
+    border:1px dashed #808080;
+    position: relative;
+
+    &__item{
+        @include flexBox(column,flex-start,center,center);
+        position: absolute;
+
+        &--text{
+            background-color:white;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+}
+.top{
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.left{
+    top: 50%;
+    left: 0;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.right{
+    top: 50%;
+    right: 0;
+    transform: translateX(50%) translateY(-50%);
+}
+
+.bottom{
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+}
+
+.center{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+
+
+
